@@ -29,4 +29,25 @@ const tempData = [
     poster:
       "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
   },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    year: 2001,
+    director: "Chris Columbus",
+    duration: "152 min",
+    genre: ["Adventure", "Family", "Fantasy"],
+    rate: 7.6,
+    poster: 
+      "https://m.media-amazon.com/images/I/81YOuOGFCJL._AC_SY679_.jpg",
+  },
+
+  {
+    title: "Fifty Shades of Grey",
+    year: 2015,
+    director: "Sam Taylor-Johnson",
+    duration: "125 min", 
+    genre: ["Romance", "Drama"], 
+    rate: 4.2,
+    poster: 
+      "https://boredanddangerousblog.wordpress.com/wp-content/uploads/2015/03/7f789b276859741be5d977db5407b672.jpg",
+},
 ];
