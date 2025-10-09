@@ -11,7 +11,7 @@ header{
     margin-top: 2.2%;
     margin-bottom: 3%;
     height: 12vh;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
 }
@@ -23,13 +23,12 @@ header{
 }
 
 header nav{
-    width: 40%;
-    margin-right: 5%;
+    width: 50em;
+    margin-right: 0.5em;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
 }
@@ -41,9 +40,8 @@ header nav ul li a{
     font-size: 20px;
     font-weight: 500;
     line-height: 30px;
-    text-align: center;
     color: #f5f2f2;
-    text-decoration: none;
+    text-decoration: none !important;
     font-family: "Delius", cursive;
     transition: transform 0.3s ease, box-shadow 0.3s;
     cursor: pointer;
@@ -73,18 +71,10 @@ section{
 h1 {
     font-family: "Chewy", system-ui;
     font-size: 5em;
-    color: rgb(209, 203, 211);
+    color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
-}
-
-p{
-    margin: 3% 5% 0 5%;
-    text-align: center;
-    color: rgb(193, 101, 230);
-    font-family: "Delius", cursive;
-    font-size: 2em;
 }
 
 .contenedor {
@@ -287,29 +277,4 @@ font-family: 'Delius', cursive;
 .movie-details p {
     font-size: 0.9rem;
 }
-}
-
-.logos {
-    display: flex;      
-    justify-content: space-around;
-    gap: 50px;
-}
-
-.logos img {
-    width: 60em;
-    height: 20em;
-    object-fit: contain;
-}
-
-img.tamaño{
-    padding: 2em 0em 2em 0em;
-}
-
-h3 {
-    font-family: 'Delius', cursive;
-    font-size: 2em;
-    color: rgb(209, 203, 211);
-    text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
 }

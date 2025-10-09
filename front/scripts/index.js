@@ -1,19 +1,12 @@
-const contenedor = document.getElementById('contenedor-peliculas');
-
-$.get("https://students-api.up.railway.app/movies", (data) => {
-    renderMovies(data)
-});
-
-
-const renderMovies = (data) => {
-    data.forEach(movie => {
+function renderMovies (movie) {
+    const contenedor = document.getElementById('contenedor-peliculas');
+    movie.forEach(movie => {
         const card = document.createElement("div");
         card.className = "movie-card";
         
         card.innerHTML = `
-            <img src="${movie.poster}" alt="poster de  ${movie.title}" class="movie-poster"/>
+            <img src="${movie.poster}" alt="poster de ${movie.title}" class="movie-poster"/>
             <a href="#">${movie.title}</a>
-
             <div class="movie-overlay">
                 <div class="movie-details">
                     <h3>${movie.title}</h3>
@@ -25,39 +18,25 @@ const renderMovies = (data) => {
                     <button class="close-btn">✕ Cerrar</button>
                 </div>
             </div>
-        `;
-
-contenedor.appendChild(card);
-    });
-
-    addClickEvents();
-}
-
-function addClickEvents() {
-    const posters = document.querySelectorAll('.movie-poster');
-    const overlays = document.querySelectorAll('.movie-overlay');
-    const closeBtns = document.querySelectorAll('.close-btn');
-
-posters.forEach((poster, index) => {
-    poster.addEventListener('click', () => {
-        overlays[index].classList.add('active');
-    });
-});
-
-
-closeBtns.forEach((btn, index) => {
-    btn.addEventListener('click', (e) => {
+            `;
+    
+    const overlay = card.querySelector('.movie-overlay');
+    
+    card.querySelector('.movie-poster').onclick = () => overlay.classList.add('active');
+    card.querySelector('.close-btn').onclick = (e) => {
         e.stopPropagation();
-        overlays[index].classList.remove('active');
-    });
-});
-
-overlays.forEach(overlay => {
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove('active');
-        }
-    });
+        overlay.classList.remove('active');
+    };
+    overlay.onclick = (e) => e.target === overlay && overlay.classList.remove('active');
+    
+    contenedor.appendChild(card);
 });
 }
 
+function getMovies() {
+$.get("https://students-api.up.railway.app/movies", function(data) {
+    renderMovies(data)
+    });
+}
+
+getMovies()
