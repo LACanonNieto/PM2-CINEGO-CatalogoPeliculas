@@ -3,6 +3,8 @@ module.exports = {
 
     output: {
         path: __dirname + "/public",
-        filename: "bundle.js",
+        filename: "bundle.js"
     },
+    mode: "development",
+    watch: true
 };
