@@ -15,11 +15,12 @@ class carritoCompra{
         return total;
     }
 
+///return this.items.reduce((total,producto) => total += producto.price * producto.quantity,0)
+
     aplicarDescuento(porcentaje) {
         const total = this.calcularTotal();
-        const descuento = total * (porcentaje / 100);
-        this.totalCompra = total - descuento;
-        return this.totalCompra;    
+        const descuento = (total / 100) * porcentaje;
+        return total - descuento;
     }
 
 }

@@ -15,7 +15,7 @@ describe("La clase carritoCompras", () =>{
     });
 
     it("Debe iniciar carritoCompra como un array Vacio", () => {
-        expect(carrito.items).toEqual([]);
+        expect(carrito.items).toEqual([]); //otra forma expect(carrito.items.length).toBe(0)
     });
 
     it("Debe Recibe un objeto representando un producto y lo agrega al carrito",() => {
@@ -29,18 +29,14 @@ describe("La clase carritoCompras", () =>{
         carrito.agregarProducto({name:"Producto Naranja", price: 1500, quantity: 2}); 
         carrito.agregarProducto({name:"Producto Pera", price: 800, quantity: 3}); 
         carrito.agregarProducto({name:"Producto Fresa", price: 5000, quantity: 2});
-        
-        const total = carrito.calcularTotal();
-        expect(total).toEqual(15400);
+        expect(carrito.calcularTotal()).toBe(15400);
     });
 
     it("Debe Aplica un descuento al total de la compra según el porcentaje especificado", () => {
         carrito.agregarProducto({name:"Producto Naranja", price: 1500, quantity: 2}); 
         carrito.agregarProducto({name:"Producto Pera", price: 800, quantity: 3}); 
         carrito.agregarProducto({name:"Producto Fresa", price: 5000, quantity: 2});
-        const totalCompra = carrito.aplicarDescuento(15);
-        expect(totalCompra).toBe(13090);
-        expect(carrito.totalCompra).toBe(13090);
+        expect(carrito.aplicarDescuento(15)).toBe(13090);
     });
 
 });
