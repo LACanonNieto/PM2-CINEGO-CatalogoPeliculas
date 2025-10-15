@@ -7,11 +7,9 @@ const axios = require("axios");
 //     });
 // }
 
-
-////////////////Con handler////////////////////////////
+////////////////Con Promesas////////////////////////////
 // function getMovies(){
 //     const promise = axios.get("https://students-api.up.railway.app/movies");
-
 //     promise.then((respuesta) => {
 //         const movies = respuesta.data;
 //         renderMovies(movies);
@@ -19,20 +17,19 @@ const axios = require("axios");
 //     .catch ((error) => {
 //         console.error("Error al obtener las peliculas:", error.message);
 //     });
-
 // }
 
 ///////////////////Con Async///////////////////////////
 
 async function getMovies() {
     try{
-        const respuesta = await axios.get("https://students-api.up.railway.app/movies");
-        const movies = respuesta.data;
+        const response = await axios.get("https://students-api.up.railway.app/movies");
+        const movies = response.data;
         renderMovies(movies);
     } catch (error){
-        console.error("Error al obtener las peliculas:", error.message);
+        alert("ocurrio un error", error);
+        console.log(error);
     }
 }
-
 
 getMovies();
