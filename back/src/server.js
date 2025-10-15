@@ -1,8 +1,8 @@
 const express = require("express");
-const router = require("./routes");
+const moviesRouter = require("./routes/moviesRouter");
 
-const app = express();  ///app o server el nombre
+const app = express();
 
-app.use(router);
+app.use(moviesRouter);
 
 module.exports = app;
