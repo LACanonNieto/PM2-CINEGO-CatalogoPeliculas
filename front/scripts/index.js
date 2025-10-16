@@ -23,7 +23,7 @@ const axios = require("axios");
 
 async function getMovies() {
     try{
-        const response = await axios.get("https://students-api.up.railway.app/movies");
+        const response = await axios.get("http://localhost:3001/movies");
         const movies = response.data;
         renderMovies(movies);
     } catch (error){
