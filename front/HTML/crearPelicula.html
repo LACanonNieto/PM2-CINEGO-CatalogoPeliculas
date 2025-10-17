@@ -35,14 +35,75 @@
     <main>
         <section>
             <article>
-                <h1>Crear Pelicula</h1>
-                <p>
-                </p>
-
+                <div>
+                    <h1>Crear Pelicula</h1>
+                </div>
+                <div class="container text-center mt-5">
+                    <form class="d-inline-block text-start">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Titulo</label>
+                            <input type="text" name="titulo" id="titulo" class="form-control col-md-9 container center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="año" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Año</label>
+                            <input type="number" name="año" id="año" class="form-control col-md-3 container center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)" id="año"/>
+                        </div>                    
+                        <div class="mb-3">
+                            <label for="director" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Director</label>
+                            <input type="text" name="director" id="director" class="form-control col-md-9 container center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)"/>
+                        </div class="mb-3">
+                        <div>
+                            <label for="duracion" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Duración</label>
+                            <input type="text" name="duracion" id="duracion" class="form-control col-md-3 container center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)"/>
+                        </div>
+                        <div class="mb-3 mt-3 " >
+                            <div class="form-label fw-bold d-block font-weight-bold" style="font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Género</div>
+                            
+                            <label for="action" style="color:aliceblue">Action</label>
+                            <input type="checkbox" id="action" name="genero" value="Action" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="adventure" style="color:aliceblue">Adventure</label>
+                            <input type="checkbox" id="adventure" name="genero" value="Adventure" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="comedy" style="color:aliceblue">Comedy</label>
+                            <input type="checkbox" id="comedy" name="genero" value="Comedy" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="drama" style="color:aliceblue">Drama</label>
+                            <input type="checkbox" id="drama" name="genero" value="Drama" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="fantasy" style="color:aliceblue">Fantasy</label>
+                            <input type="checkbox" id="fantasy" name="genero" value="Fantasy" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="horror" style="color:aliceblue">Horror</label>
+                            <input type="checkbox" id="horror" name="genero" value="Horror" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="mystery" style="color:aliceblue">Mystery</label>
+                            <input type="checkbox" id="mystery" name="genero" value="Mystery" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="thriller" style="color:aliceblue">Thriller</label>
+                            <input type="checkbox" id="thriller" name="genero" value="Thriller" class="mr-3" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            
+                            <label for="scifi" style="color:aliceblue">Sci-Fi</label>
+                            <input type="checkbox" id="scifi" name="genero" value="Sci-Fi" style="box-shadow: 0 0 5px rgb(191, 33, 231)">
+                            </div>
+                        <div class="mb-3 ">
+                            <label for="raiting" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Raiting</label>
+                            <input type="number"  name="raiting" id="raiting" class="form-control col-md-2 container center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="poster" class="form-label font-weight-bold" style= "font-family:'Delius', cursive; font-size: 1.5em; color: rgb(231, 230, 233);">Poster</label>
+                            <input type="url" name="poster" id="poster" class="form-control" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: aliceblue; box-shadow: 0 0 20px rgb(206, 110, 230); background-color: rgba(228, 234, 235, 0.5)" placeholder="URL"/>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-primary mr-5">Crear</button>
+                            <button type="button" class="btn btn-danger">Restablecer</button>
+                        </div>
+                    </form>
+                </div>
             </article>
         </section>
     </main>
-
     <script src="./scripts/index.js"></script>
+    <script src="../scripts/createMovieDOM.js"></script>
 </body>
 </html>
