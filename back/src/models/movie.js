@@ -1,24 +1,15 @@
-class Movie {
-    constructor({ title, year, director, duration, genre, rate, poster }) {
+const mongoose = require('mongoose');
 
-        if (!title) {
-            throw new Error("El campo 'title' es obligatorio");
-        }
-        if (!poster) {
-            throw new Error("El campo 'poster' es obligatorio");
-        }
-        if (!director) {
-            throw new Error("El campo 'director' es obligatorio");
-        }
+const movieSchema = new mongoose.Schema({
+    title: String,
+    year: Number,
+    director: String,
+    duration: String,
+    genre: Array,
+    rate: Number,
+    poster: String
+});
 
-        this.title = title;
-        this.year = year;
-        this.director = director;
-        this.duration = duration;
-        this.genre = genre;
-        this.rate = rate;
-        this.poster = poster;
-    }
-}
+const Movie = mongoose.model('Movie', movieSchema);
 
 module.exports = Movie;

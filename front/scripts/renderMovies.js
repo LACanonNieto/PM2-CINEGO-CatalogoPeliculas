@@ -1,5 +1,6 @@
 function renderMovies (movie) {
     const contenedor = document.getElementById('contenedor-peliculas');
+    
     movie.forEach(movie => {
         const card = document.createElement("div");
         card.className = "movie-card";

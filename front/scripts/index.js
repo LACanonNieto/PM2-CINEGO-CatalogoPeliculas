@@ -1,25 +1,5 @@
-const renderMovies = require("./renderMovies");
 const axios = require("axios");
-
-// function getMovies() {
-// $.get("https://students-api.up.railway.app/movies", function(data) {
-//     renderMovies(data)
-//     });
-// }
-
-////////////////Con Promesas////////////////////////////
-// function getMovies(){
-//     const promise = axios.get("https://students-api.up.railway.app/movies");
-//     promise.then((respuesta) => {
-//         const movies = respuesta.data;
-//         renderMovies(movies);
-//     })
-//     .catch ((error) => {
-//         console.error("Error al obtener las peliculas:", error.message);
-//     });
-// }
-
-///////////////////Con Async///////////////////////////
+const renderMovies = require("./renderMovies");
 
 async function getMovies() {
     try{
@@ -27,7 +7,7 @@ async function getMovies() {
         const movies = response.data;
         renderMovies(movies);
     } catch (error){
-        alert("ocurrio un error", error);
+        alert("No se pudieron cargar las peliculas", error);
         console.log(error);
     }
 }

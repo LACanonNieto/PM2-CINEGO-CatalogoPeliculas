@@ -1,6 +1,7 @@
 function enviarValidarMovies(event){
     event.preventDefault();
     const getValue = (attrs) => document.getElementById(attrs).value.trim();
+    
     const titulo = getValue('titulo');
     const año = getValue('año');
     const director = getValue('director');
@@ -21,20 +22,35 @@ function enviarValidarMovies(event){
         return false;
     }
 
-    console.log('✅ Formulario válido. Datos ingresados:', {
-        titulo,
-        año,
-        director,
-        duracion,
-        generos: generosSeleccionados,
-        raiting,
-        poster
-    });
-    
-    alert('✅ Formulario válido. Todos los campos están completos.');
-    return true;
+const nuevaPelicula = {
+    title: titulo,
+    year: Number(año),
+    director,
+    duration: duracion,
+    genre: generosSeleccionados,
+    rate: Number(raiting),
+    poster: poster
+    };
 
+    console.log('📦 Enviando al backend:', nuevaPelicula);
+
+    // 🚀 Petición POST con Axios
+    axios.post('http://localhost:3001/movies', nuevaPelicula)
+        .then(response => {
+            console.log('✅ Película creada con éxito:', response.data);
+            alert('🎬 Película creada correctamente.');
+
+            limpiarFormulario();
+
+        })
+        .catch(error => {
+            console.error('❌ Error al crear la película:', error);
+            alert('Ocurrió un error al crear la película. Revisa la consola.');
+        });
+
+    return true;
 }
+
 
 function limpiarFormulario(){
     const attrs = ['titulo', 'año', 'director', 'duracion', 'raiting', 'poster'];  
