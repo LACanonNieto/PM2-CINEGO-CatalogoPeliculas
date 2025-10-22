@@ -26,7 +26,7 @@ eval("{/*! Axios v1.12.2 Copyright (c) 2025 Matt Zabriskie and contributors */\n
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("{const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst renderMovies = __webpack_require__(/*! ./renderMovies */ \"./scripts/renderMovies.js\");\r\nconsole.log(\"✅ bundle.js cargado correctamente\");\r\n\r\nasync function getMovies() {\r\n    console.log(\"🟡 Ejecutando getMovies...\");\r\n    try{\r\n        const response = await axios.get(\"http://localhost:3001/movies\");\r\n        console.log(\"🎬 Películas recibidas del backend:\", response.data);\r\n        const movies = response.data;\r\n        renderMovies(movies);\r\n    } catch (error){\r\n        alert(\"No se pudieron cargar las peliculas\", error);\r\n        console.log(error);\r\n    }\r\n}\r\n\r\ngetMovies();\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?\n}");
+eval("{const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst renderMovies = __webpack_require__(/*! ./renderMovies */ \"./scripts/renderMovies.js\");\r\n\r\nasync function getMovies() {\r\n    try{\r\n        const response = await axios.get(\"http://localhost:3001/movies\");\r\n        const movies = response.data;\r\n        renderMovies(movies);\r\n    } catch (error){\r\n        alert(\"No se pudieron cargar las peliculas\", error);\r\n        console.log(error);\r\n    }\r\n}\r\n\r\ngetMovies();\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?\n}");
 
 /***/ }),
 

@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const {getAllMovies,createMovie} = require("../controllers/moviesController");
-const validateMovie = require("../middlewares/Validatemovie");
+const validateMovie = require("../middlewares/validateMovie");
 
 
 const router = Router();   //crea rutas internamente
