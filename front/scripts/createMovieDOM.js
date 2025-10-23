@@ -11,10 +11,10 @@ function enviarValidarMovies(event) {
     const genreCheckboxes = Array.from(document.querySelectorAll('#genre-box input[type="checkbox"]'));
     const genreArray = genreCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
-    // if (!title || !year || !director || !duration || !rate || !poster) {
-    //     alert('⚠️ ERROR: Todos los campos son obligatorios para crear la película.');
-    //         return false;
-    // }
+    if (!title && !year && !director && !duration && !rate && !poster && genreArray.length === 0) {
+        alert('⚠️ ERROR: Todos los campos son obligatorios para crear la película.');
+        return false;
+    }
     if (!genreArray || !Array.isArray(genreArray) || genreArray.length === 0) {
         alert('🎭 ERROR: Debes seleccionar al menos un género.');
         return false;

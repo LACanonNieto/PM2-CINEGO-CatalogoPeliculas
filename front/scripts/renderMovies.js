@@ -1,5 +1,8 @@
+const axios = require("axios");
+
 function renderMovies (movie) {
     const contenedor = document.getElementById('contenedor-peliculas');
+    contenedor.innerHTML = ""; 
     
     movie.forEach(movie => {
         const card = document.createElement("div");
@@ -17,6 +20,7 @@ function renderMovies (movie) {
                     <p><strong>Género:</strong> ${movie.genre.join(", ")}</p>
                     <p class="rating"><strong>Rating:</strong> ⭐ ${movie.rate}/10</p>
                     <button class="close-btn">✕ Cerrar</button>
+                    <button class="btn-eliminar" data-id="${movie._id}">Eliminar Movie</button>
                 </div>
             </div>
             `;
@@ -32,6 +36,24 @@ function renderMovies (movie) {
     
     contenedor.appendChild(card);
 });
-};
+
+document.querySelectorAll(".btn-eliminar").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation(); // evita cerrar overlay
+      const id = e.target.dataset.id;
+
+      if (confirm("¿Seguro que deseas eliminar esta película?")) {
+        try {
+          await axios.delete(`http://localhost:3001/movies/${id}`);
+          e.target.closest(".movie-card").remove(); // quitar del DOM
+          alert("Película eliminada correctamente ✅");
+        } catch (error) {
+          console.error("Error al eliminar la película:", error);
+          alert("❌ No se pudo eliminar la película");
+        }
+      }
+    });
+  });
+}
 
 module.exports = renderMovies;

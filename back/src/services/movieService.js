@@ -14,4 +14,9 @@ module.exports = {
             console.log('Error al ejecutar el metodo createMovie del servicio', error);     
         }                               
     },
+
+        deleteMovie: async (id) => {
+        return await Movie.findByIdAndDelete(id);
+    },
+
 };
